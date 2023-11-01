@@ -49,7 +49,7 @@ public class ZooManagement {
 
         //*************************************************Prosit 5***************************************************
         System.out.println("************************ Prosit 5 ***********************");
-        Aquatic aq1= new Aquatic("fam_aquatic", "aquat1", 5, true, "habit_aquatic");
+       // Aquatic aq1= new Aquatic("fam_aquatic", "aquat1", 5, true, "habit_aquatic");
         Terrestrial terr1 = new Terrestrial("fam_terr", "terr1", 5, true, 20);
         Dolphin dol1 = new Dolphin("fam_aquatic", "aquat_dol", 5, true, "habit_dol",10.3f);
         Penguin peng = new Penguin("fam_aquatic", "aquat_peng", 5, true, "habit_peng",10.1f );
@@ -57,9 +57,16 @@ public class ZooManagement {
         //redef : interclasse
         //surcharge : fi nafs lclasse
 
-        aq1.swim();
+       // aq1.swim();
         dol1.swim();
+        //**************************************************Prosit 6 ********************************************
+        System.out.println("**************************************************Prosit 6 ********************************************");
+      //  z2.addAquaticAnimal(aq1);
+        z2.addAquaticAnimal(dol1);
+        z2.addAquaticAnimal(peng);
 
+        System.out.println(peng.equals(peng));
+        System.out.println(peng.equals(dol1));
 
     }
 }

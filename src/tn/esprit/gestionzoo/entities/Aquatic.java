@@ -17,7 +17,16 @@ public class Aquatic extends Animal{
 
     }
 
-    public void swim() {
-        System.out.println("This aquatic animal is swimming. ");
-    }
+    public  void swim() {System.out.println("This aquatic animal is swimming. ");}
+       public boolean equals(Object obj){
+        if (obj== null){return false;}
+        if (this == obj) { return true; }
+        if (this.getClass() != obj.getClass()) { return false ;}
+        Aquatic other= (Aquatic)obj ;
+        //this.name.equals(((Aquatic) obj).name)
+           return this.name.equals(other.name) && super.age==other.age &&  habitat.equals(other.habitat);
+       }
+
+    
+
 }
