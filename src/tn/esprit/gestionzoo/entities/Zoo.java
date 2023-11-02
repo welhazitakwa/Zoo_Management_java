@@ -7,7 +7,8 @@ public class Zoo {
     protected String name;
     private String city;
     // doit etre NBR_CAGES
-    public static final int nbrCages = 25;
+    public static final int nbrCages = 3
+            ;
     public int cmp = 0;
     public static int cmp_aquatic = 0;
 
@@ -73,7 +74,7 @@ public class Zoo {
 
     }
 
-    public boolean addAnimal(Animal animal) {
+  /*  public boolean addAnimal(Animal animal) {
         //search pour interdir la redondance
         //IF (! isZooFull && )
         if (!isZooFull() && searchAnimal(animal) == -1) {
@@ -84,7 +85,16 @@ public class Zoo {
             return false;
         }
 
-    }
+    }*/
+  public void addAnimal(Animal animal) throws ZooFullException {
+          if ( isZooFull() && searchAnimal(animal) != -1) {
+              throw new ZooFullException("The zoo is full");
+          } else {
+              animals[cmp] = animal;
+              cmp++;
+              System.out.println("le nombre d'animales est : "+cmp);
+          }
+         }
 
     public void listAnimals() {
         System.out.println("Animaux présents dans le zoo :");
@@ -107,14 +117,9 @@ public class Zoo {
                 // corr : if (animals[i].name ==name) //pour tester l'egalité des objets on utilise equals (prédefinie) kima equals
                 System.out.println(i);
                 return i; // tn.esprit.gestionZoo.entities.Animal trouvé, retourne l'indice
-            }
-
-
-        }
-
+            }                                                    }
         return -1; // tn.esprit.gestionZoo.entities.Animal non trouvé
-
-    }
+         }
 
     boolean removeAnimal(Animal a) {
         int pos = searchAnimal(a);
